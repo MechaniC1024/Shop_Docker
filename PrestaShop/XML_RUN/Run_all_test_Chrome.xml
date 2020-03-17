@@ -1,0 +1,44 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PrestaShop_Chrome" verbose="1" parallel="tests"
+	thread-count="2">
+
+	<listeners>
+		<listener
+			class-name="com.PrestaShop.Listeners.TestFailedScreenshotListener">
+		</listener>
+	</listeners>
+
+	<parameter name="browser" value="Chrome" />
+	<parameter name="threadCount" value="2" />
+ 
+	<test name="Check login and logout.">
+		<classes>
+			<class name="com.PrestaShop.test1.LoginAndLogout" />
+		</classes>
+	</test>
+
+	<test name="Check titles.">
+		<classes>
+			<class name="com.PrestaShop.test1.Titles" />
+		</classes>
+	</test>
+
+	<test name="Check the addition of a new category.">
+		<classes>
+			<class name="com.PrestaShop.test2.AddNewCategory" />
+		</classes>
+	</test>
+
+	<test name="Adding and checking a new product.">
+		<classes>
+			<class name="com.PrestaShop.test3.CreatingANewProduct" />
+		</classes>
+	</test>
+
+	<test name="Ordering.">
+		<classes>
+			<class name="com.PrestaShop.test4.Ordering" />
+		</classes>
+	</test>
+
+</suite>
