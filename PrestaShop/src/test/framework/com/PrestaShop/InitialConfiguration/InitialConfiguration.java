@@ -28,6 +28,12 @@ public class InitialConfiguration {
 		browserSuite = browser;
 
 		DesiredCapabilities cap = Browsers.valueOf(browser.toUpperCase()).create();
+		
+		cap.setCapability("enableVNC", true);
+		cap.setCapability("enableLog", true);
+		cap.setCapability("logName", browser + ".log");
+		cap.setCapability("enableVideo", true);
+		cap.setCapability("videoName", browser + ".mp4");
 
 		InstanceDriver.INSTANCE_DRIVER.addBrowser(browser, Integer.parseInt(threadCount), cap);
 		mapOfBrowsers = InstanceDriver.INSTANCE_DRIVER.getDriver();
